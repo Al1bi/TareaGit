@@ -1,0 +1,16 @@
+APUNTES 1-GIT-Comando basicos
+
+1. git init // inicializa la gestion del directorio actual
+2. git status // para observar el estado de la gestion del archivo
+3. git add // para aniadir algun archivo y/o directorio a un espacio temporal
+4. git commit -m "<mensaje>" // para realizar la confirmacion para agregar algun archivo del espacio temporal
+5. git log // muestra un registro de los commits que se realizaron anteriormente
+
+APUNTE 3-Git Hub Basico
+
+Git hub -> servicio en la nube que provee repositorios git de forma gratuita
+
+git remote add origin <URL_repositorio_remoto> // conectar un repositorio local a un repositorio remoto  
+git branch -M main  // main -> <nombre_x>   cambiar el nombre de la rama principal (defecto master)
+git push -u origin main // se utiliza para enviar cambios locales al repositorio remoto, y establecer una relacion de seguimiento entra la rama local "main" y la rama remota "main".
+ 
