@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <form action = "/realizarPedido/{{total}}" method = "POST">
+            
+            
+            <p>Nombre: {{resumenPedido.nombre}}</p>
+            <p>Apellido: {{resumenPedido.apellido}}</p>
+            <p>Email: {{resumenPedido.email}}</p>
+            <p>Direccion: {{resumenPedido.direccion}}</p>
+            <p>Celular: {{resumenPedido.celular}}</p>
+            
+            <p> Alguna nota al pedido: </p>
+            <p><input type = "text" name = "nt" ></p>    
+            <p> Ingrese un metodo de pago: </p>
+            <p><input type = "text" name = "mp" ></p>
+            
+            <p><input type = "submit" value = "Realizar Pedido" ></p>
+        </form>
+        
+    </body>
+</html>

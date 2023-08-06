@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/assets/principal.css')}}">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/assets/style-producto.css')}}">
+    <link rel="shortcut icon" href="sources/logo.ico" type="image/ico">
+    <title>Name Producto</title>
+</head>
+    <body>
+        <a href="/vaciarCarrito">Remove All</a>
+        {% for producto in productosRecibidos %}
+            <p> Nombre:{{producto.nombre}}----Categoria:{{producto.categoria}}----Cantidad:{{producto.cantidad}}----Subtotal:{{producto.subtotal}}
+            <a   href="/eliminarDeCarrito/{{producto.idProducto}}" > Quitar del carrito</a>
+            </p> 
+        {% endfor %}
+         <!--Aqui pongo el subtotal-->
+        <h2>Total : {{totalAPagar}}</h2>
+
+        <a href="/">Volver a la pantalla principal</a>
+        <div><a href="/checkOut/{{totalAPagar}}"><button class="btn-aniadir">Check out</button></a></div>
+    </body>
+</html>

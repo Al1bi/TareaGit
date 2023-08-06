@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action = "/modificadorDeProductoEnCatalogo" method = "POST">
+            <input type = "hidden" name = "ip" value="{{productoRecibidoModificar._id}}">
+            <p> Ingrese el nombre del producto: </p>
+            <p><input type = "text" name = "np" value="{{productoRecibidoModificar.nombre}}"></p>
+            <p> Ingrese la categoria del producto: </p>
+            
+            
+            
+            <select name="cp">
+            <option value="" disabled selected>{{productoRecibidoModificar.categoria}}</option>
+            {% for categoria in categoriasRecibidas %}
+            <option>{{categoria}}</option>
+            {% endfor %}
+            
+            
+            
+            </select>
+            <p> Ingrese el precio del producto: </p>
+            <p><input type = "text" name = "pp" value="{{productoRecibidoModificar.precio}}"></p>
+            <p> Ingrese la descripcion del producto: </p>
+            <p><input type = "text" name = "dp" value="{{productoRecibidoModificar.descripcion}}"></p>
+            <p><input type = "submit" value = "Enviar" ></p>
+        </form>
+        <a href="javascript: history.go(-1)">Cancelar la modificacion y volver a los productos</a>
+    </body>
+</html>

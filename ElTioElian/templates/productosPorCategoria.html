@@ -1,0 +1,6 @@
+<html>
+    {% for producto in productosRecibidos %}
+            <p> Nombre:{{producto.nombre}}----Precio:{{producto.precio}}----<a  href="/verDetalleDeProducto/{{ producto._id }}" >Ver detalles</a></p> 
+    {% endfor %}
+    <a href="/">Volver a la pantalla principal</a>
+</html>

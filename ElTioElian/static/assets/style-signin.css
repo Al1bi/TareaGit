@@ -1,0 +1,65 @@
+body{
+    background-color: rgb(143, 114, 50);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal{
+    background-color: white;
+    padding: 3rem 3rem 3rem 3rem;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+}
+
+.inputs div{
+    padding-top: 1.5rem;
+    font-size: large;
+    display: flex;
+    width: 17rem;
+    justify-content:space-between;
+}
+input{
+    width: 10rem;
+    height: 1.3rem;
+    border-radius: 10px;
+    border: 1px solid;
+    padding-left: 0.4rem;
+}
+.username:hover{
+    background-color: rgb(238, 238, 238);
+}
+.pass:hover{
+    background-color: rgb(238, 238, 238);
+}
+button{
+    height: 2rem;
+    width: 5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    border: transparent;
+    background-color: rgb(226, 220, 184);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+button:hover{
+    background-color: rgb(201, 193, 147);
+    transform: scale(1.2);
+}
+
+.registro{
+    padding-top: 3rem;
+    font-size: small;
+}
+.atras{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+}

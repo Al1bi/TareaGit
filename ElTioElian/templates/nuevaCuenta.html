@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/assets/style-signin.css')}}">
+    <title>Login</title>
+</head>
+    <body>
+        <div class="atras">
+            <a href="signin.html">Atras</a>
+        </div>
+        <form action = "/actionRegistrarCuenta" method = "POST">
+        <div class="principal">
+            <div>
+                <img src="/sources/logoEliana.png" alt="" >
+            </div>
+            <div class="inputs">
+                <div>
+                    <span>Nombre: </span>
+                    <input type="text" name="nombre">
+                </div>
+                <div>
+                    <span>Apellido: </span>
+                    <input type="text" name="apellido">
+                </div>
+                <div>
+                    <span>Correo: </span>
+                    <input type="email" name="email">
+                </div>
+                <div>
+                    <span>Contraseña: </span>
+                    <input type="password" class="pass" name="contrasenia">
+                </div>
+                <div>
+                    <span>Celular: </span>
+                    <input type="text" class="pass" name="celular">
+                </div>
+                <div>
+                    <span>Direccion: </span>
+                    <input type="text" class="pass" name="direccion">
+                </div>
+            </div>
+            <div>
+                <button type="submit" value="Crear Cuenta">Registrarse</button>
+            </div>
+        </div>
+        </form>
+    </body>
+</html>

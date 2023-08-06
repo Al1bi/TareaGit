@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/assets/style-agregar.css')}}">
+    <link rel="shortcut icon" href="sources/logo.ico" type="image/ico">
+    <title>Agregar Producto</title>
+</head>
+<body>
+    <div class="atras">
+        <a href="index.html">Atras</a>
+    </div>
+    <div class="principal">
+        <h1>Agregar Productos</h1>
+        <form action = "http://127.0.0.1:5000/registradorDeProductoEnCatalogo" method = "POST">
+            <div class="inputs">
+                <div>
+                    <span>Ingrese el nombre del producto: </span>
+                    <input type="text" class="username" name="np">
+                </div>
+                <div>
+                    <span>Ingrese la categoria del producto: </span>
+                    <select name="cp" id="">
+                        <option value="" disabled selected>--Seleccione una Categoria--</option>
+                        {% for categoria in categoriasRecibidas %}
+                            <option>{{categoria}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <span>Ingrese el precio del producto: </span>
+                    <input type="number" name="pp">
+                </div>
+                <div>
+                    <span>Ingrese la descripción del producto: </span>
+                    <input type="text" name="dp">
+                </div>
+            </div>
+            <div>
+                <button type="submit" value="Enviar">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

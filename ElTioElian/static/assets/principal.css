@@ -1,0 +1,145 @@
+*{
+    box-sizing: border-box;
+    color: black;
+    font-family: Bogle,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+}
+
+header{
+    color: white;
+    /*background-color: rgb(158, 33, 11);*/
+   /*background: linear-gradient(180deg, rgb(190, 44, 18) 0%, rgb(158, 33, 11) 35%, rgb(158, 33, 11) 100%);
+    */
+    background-color: rgb(143, 114, 50);
+    padding: 0;
+    flex-basis: 0%;
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+}
+.cabecera-fake{
+    padding: 0;
+    height: 105px;
+
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+}
+
+header div{
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+/* .buscador{
+    
+} */
+input.buscar{
+    width: 35rem;
+    height: 2.5rem;
+    border-radius: 25px;
+    border: 0px;
+    padding: 0.2rem 2.3rem 0.4rem 1rem;
+    position: relative;
+    /* outline: none; */
+    bottom: 4px;
+    padding: 2px;
+    padding-left: 1.5rem;
+    padding-right: 2.3rem;
+
+}
+.img_buscar{
+    width: 30px;
+    height: auto;
+    position: relative;
+    right: 40px;
+    top: 5px;
+    /*float: left;
+*/}
+
+.logo{
+    width: 150px;   
+}
+
+.logo:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+}
+
+.arriba{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.3rem 1rem 1.3rem;
+}
+.arriba div img{
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+}
+/*.arriba div img:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+}*/
+
+.abajo{
+    border-top: rgb(255, 255, 255) solid 1px;
+    width: 100%;
+    padding: 0.5rem 1.3rem 0.5rem 1.3rem;
+}
+.imagenes{
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 0.7rem 0.3rem 0.3em;
+}
+.img_div1{
+    font-size: 12px;
+}
+.img_div2{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.imagenes:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+}
+
+footer{
+    color: white;
+    background-color: rgb(97, 75, 26);
+    padding: 2rem 0 1rem 0;
+    flex-basis: 0%;
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer div{
+    color: white;
+    font-size: 10px;
+    padding: 5px
+}
+
+.btn-aniadir{
+    background-color: rgb(226, 220, 184);
+    height: 2rem;
+    width: 4rem;
+    border-radius: 5px;
+    border: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

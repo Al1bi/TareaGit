@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/assets/style-index.css')}}">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/assets/principal.css')}}">
+    <link rel="shortcut icon" href="sources/logo.ico" type="image/ico">
+    <title>Tio Elian's</title>
+</head>
+<body>
+    <header>
+        <div class="arriba">
+            <div class="logo">
+                <img src="sources/logoEliana.png" alt="Tio Elian's" width="100%">
+            </div>
+            <div class="buscador">
+                <input type="search" aria-label="Search" aria-activedescendant autocomplete="off" class="buscar">
+                <input type="image" src="/sources/icone-loupe-noir.png" class="img_buscar">
+            </div>
+            <a href="signin.html"><div class="imagenes">
+                <img src="sources/sign_in2.png" alt="Sign In" width="30px" height="auto">
+                <div>
+                    <div class="img_div1">Sign In</div>
+                    <div class="img_div2">Account</div>
+                </div>
+            </div></a>
+            <div class="imagenes">
+                <img src="sources/cart.png" alt="Carrito" width="30px" height="auto">
+                <div>
+                    <div class="img_div1">Carrito</div>
+                    <div class="img_div2">Carrito 2</div>
+                </div>
+            </div>
+        </div>
+        <div class="abajo">
+            <div>
+                <select onchange="location.href=this.options[this.selectedIndex].value" name="elige" size="1"> 
+                    <option value="" disabled selected>--SELECCIONE UNA CATEGORIA--</option>
+                    {% for categoria in categorias %}
+                    <option value="/productosPorCategoria/{{ categoria }}">{{ categoria }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="principal">
+            <div class="cabecera-fake"></div>
+            <div class="slider-frame">
+                <ul>
+                    {% for producto in productosMasVendidos %}
+                    <li>
+                        <img src="/sources/sp1.jpg" alt="">
+                        <span>{{producto.nombre}}</span>
+                        <button>Ver Detalle</button>
+                        <a href="/verDetalleDeProducto/{{ producto._id }}" ><button class="btn-aniadir">Ver Detalle</button></a>
+                    </li>
+                    {% endfor %}
+                
+                </ul>
+            </div>
+            <div class="cuerpo">
+            <h1>Productos mas comprados</h1>
+                <div class="cuerpo-filas">
+                {% for producto in productosMasComprados %}
+                    <div>
+                        <img src="/sources/sp1.jpg" alt="">
+                        <div class="product-nombre">{{producto.nombre}}</div>
+                        <div class="product-precio">{{producto.precio}}$</div>
+                        <div><a href="/verDetalleDeProducto/{{ producto._id }}"><button class="btn-aniadir">Ver detalles</button></a></div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="cuerpo">
+            <h1>Todos los productos</h1>
+                <div class="cuerpo-filas">
+                {% for producto in productosRecibidosTodos %}
+                    <div>
+                        <img src="/sources/sp1.jpg" alt="">
+                        <div class="product-nombre">{{producto.nombre}}</div>
+                        <div class="product-precio">{{producto.precio}}$</div>
+                        <div><a href="/verDetalleDeProducto/{{ producto._id }}"><button class="btn-aniadir">Ver Detalle</button></a></div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            ESTO ES EL FOOTER
+        </div>
+        <div>
+            ESTO ES EL SEGUNDO FOOTER
+        </div>
+        <div>
+            © 2022 Tio Elian's All Rights Reserved
+        </div>
+    </footer>
+</body>
+</html>

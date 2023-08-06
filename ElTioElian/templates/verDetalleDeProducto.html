@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/assets/principal.css')}}">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='../static/assets/style-producto.css')}}">
+    <link rel="shortcut icon" href="sources/logo.ico" type="image/ico">
+    <title>Name Producto</title>
+</head>
+<body>
+    <header>
+        <div class="arriba">
+            <div class="logo">
+                <a href="index.html" title="Ir a la pagina principal"><img src="sources/logoEliana.png" alt="Tio Elian's" width="100%"></a>
+            </div>
+            <div class="buscador">
+                <input type="search" aria-label="Search" aria-activedescendant autocomplete="off" class="buscar">
+                <input type="image" src="/sources/icone-loupe-noir.png" class="img_buscar">
+            </div>
+            <div class="imagenes">
+                <img src="sources/sign_in2.png" alt="Sign In" width="30px" height="auto">
+                <div>
+                    <div class="img_div1">Sign In</div>
+                    <div class="img_div2">Account</div>
+                </div>
+            </div>
+            <div class="imagenes">
+                <img src="sources/cart.png" alt="Carrito" width="30px" height="auto">
+                <div>
+                    <div class="img_div1">Carrito</div>
+                    <div class="img_div2">$0.00</div>
+                </div>
+            </div>
+        </div>
+        <div class="abajo">
+            <div>
+                PRUEBA
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="cabecera-fake"></div>            
+        <div class="principal">
+            <div><img src="sources/sp3.jpeg" alt="" class="img-principal"></div>
+            <div class="producto">
+               
+                <h1>Nombre: {{productoRecibido.nombre}}</h1>
+                <h3>Precio: {{productoRecibido.precio}}</h3>
+                <h2>Categoria: {{productoRecibido.categoria}}</h2>
+                <div>
+                   Descripcion: {{productoRecibido.descripcion}}
+                </div>
+
+                <!--Aqui viene mi pinche boton-->
+
+                
+
+                {% if estaEnCarrito != 0 %}
+                    <div><h1>Producto ya agregado al carrito</h1></div>
+                    <div><a href="/eliminarDeCarrito/{{productoRecibido._id}}"><button class="btn-aniadir"> Quitar del carrito</button></a></div>
+                    <div><a href="/verCarrito"><button class="btn-aniadir">Ver Carrito</button></a></div>
+                {% else %}
+                    <form action="/aniadirACarrito/{{productoRecibido._id}}/{{productoRecibido.precio}}" method="POST">
+                        <div>
+                            <input type="number" id="quantity" name="cant" min="1" max="999" >
+                        </div>
+                        <div>
+                            <button>Agregar a carrito</button>
+                        </div>  
+                    </form>
+                {% endif %}
+    
+                 
+                
+                <!--Aqui terminan mis cambios-->
+
+                <a href="javascript: history.go(-1)">Volver a los productos</a>
+            </div>
+        </div>
+        
+    </main>
+    <footer>
+        <div>
+            ESTO ES EL FOOTER
+        </div>
+        <div>
+            ESTO ES EL SEGUNDO FOOTER
+        </div>
+        <div>
+            © 2022 Tio Elian's All Rights Reserved
+        </div>
+    </footer>
+</body>
+</html>
